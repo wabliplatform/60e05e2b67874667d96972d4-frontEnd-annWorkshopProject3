@@ -50,17 +50,21 @@ document.getElementById("iyjqci").onclick = event => {
    document.getElementById("ixe5wc").innerHTML = e;
 };document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
-    document.addEventListener('alignpUpdate', function(e) {
-  const advanceSelect = document.getElementById('i7w1n');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});};window.onload = () => {let projectId = window.location.pathname.replace('/updateProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle; } catch (e) { console.log(e) };try { 
+    let projectId = window.location.pathname.replace('/updateProject/','');let project = new TempApi.Project();project['pImage'] = {
+        data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
+        name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
+      };project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value; let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); 
+      if(response.body.query.pImage !== undefined){
+
+        if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
+          document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
+        }
+        else{
+          document.querySelector('[annotationname = pImage]').src = response.body.query.pImage.data;
+        }
+        document.querySelector('[annotationname = pImage]').name = response.body.query.pImage.name;
+      }
+      document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle ;document.querySelector('[annotationname = pStart]').value = response.body.query.pStart ;document.querySelector('[annotationname = pWebsite]').value = response.body.query.pWebsite ;document.querySelector('[annotationname = pEnd]').value = response.body.query.pEnd ;document.querySelector('[annotationname = pDuration]').value = response.body.query.pDuration ;document.querySelector('[annotationname = pGA]').value = response.body.query.pGA ;document.querySelector('[annotationname = pAbstract]').value = response.body.query.pAbstract ;document.querySelector('[annotationname = pDescription]').value = response.body.query.pDescription ;{  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {let projectId = window.location.pathname.replace('/updateProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle; } catch (e) { console.log(e) };try { 
       if(response.body.query.pImage !== undefined){
         if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
           document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
