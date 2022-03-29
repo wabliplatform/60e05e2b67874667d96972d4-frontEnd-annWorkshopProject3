@@ -1,4 +1,4 @@
-let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let apiEmployeeApi = new TempApi.EmployeeApi();let employee = new TempApi.Employee();document.getElementById('i8nj').onclick = (event) => {
+let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index';let employee = new TempApi.Employee();document.getElementById('i8nj').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('i6sjj').onclick = (event) => {
     event.preventDefault();
@@ -80,29 +80,4 @@ document.getElementById("i5zsp").onclick = event => {
   );
 });document.getElementById('i1wf6').onclick = (event) => {
     event.preventDefault();
-    };window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();  data.forEach((item,i) => {
-    if(subDataElements.length > i)
-      {
-        try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'pTitle']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].pTitle;
-        insideSubDataElement.value=data[data.length -i -1]._id;
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'pTitle'){
-        subDataElements[i].textContent = data[data.length -i -1].pTitle;
-        subDataElements[i].value=data[data.length -i -1]._id;
-      }
-     } catch (e) { console.log(e) };
-        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
-        
-      }
-      document.dispatchEvent(new Event("aligneProject"))
-    });
-
-    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};
+    };window.onload = () => {};
