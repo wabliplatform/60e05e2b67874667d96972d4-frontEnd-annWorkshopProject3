@@ -88,7 +88,17 @@ document.getElementById("iyjqci").onclick = event => {
   );const map = new Map();  data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
-        console.log('There are no inside data elements');
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'wName']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].wName;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'wName'){
+        subDataElements[i].textContent = data[data.length -i -1].wName;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
         map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
         
       }
