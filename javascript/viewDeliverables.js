@@ -8,7 +8,9 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/createWorkpackage' ;}};document.getElementById('ika04e').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('in69a').onclick = (event) => {
+    {  location.href= '/createEmployee' ;}};document.getElementById('ia24zl').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/createDeliverable' ;}};document.getElementById('in69a').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ilqkve').onclick = (event) => {
     event.preventDefault();

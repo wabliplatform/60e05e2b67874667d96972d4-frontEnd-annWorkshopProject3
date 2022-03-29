@@ -1,6 +1,8 @@
 let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index';document.getElementById('iwhz').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/homePage' ;}};document.getElementById('iqxri').onclick = (event) => {
+    {  location.href= '/homePage' ;}};document.getElementById('ila5xr').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/createDeliverable' ;}};document.getElementById('iqxri').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ipfpt8').onclick = (event) => {
     event.preventDefault();

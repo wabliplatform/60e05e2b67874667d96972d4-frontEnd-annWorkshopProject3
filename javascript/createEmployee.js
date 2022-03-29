@@ -8,7 +8,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     event.preventDefault();
     {  location.href= '/createWorkpackage' ;}};document.getElementById('ikvd4').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('i63k3').onclick = (event) => {
+    {  location.href= '/createEmployee' ;}};document.getElementById('ieulg').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/createDeliverable' ;}};document.getElementById('i63k3').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('inokz').onclick = (event) => {
     event.preventDefault();

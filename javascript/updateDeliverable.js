@@ -6,7 +6,9 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/createWorkpackage' ;}};document.getElementById('ijl2k').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('ic0w6').onclick = (event) => {
+    {  location.href= '/createEmployee' ;}};document.getElementById('i56lm').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/createDeliverable' ;}};document.getElementById('ic0w6').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ihrbj').onclick = (event) => {
     event.preventDefault();

@@ -6,7 +6,9 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/createWorkpackage' ;}};document.getElementById('i4jic').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('ie6a5').onclick = (event) => {
+    {  location.href= '/createEmployee' ;}};document.getElementById('ipanfc').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/createDeliverable' ;}};document.getElementById('ie6a5').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('i35mv3').onclick = (event) => {
     event.preventDefault();
