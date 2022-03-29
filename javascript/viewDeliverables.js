@@ -14,7 +14,9 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ilqkve').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('i5nvmz').onclick = (event) => {
+    {  location.href= '/viewEmployees' ;}};document.getElementById('iffxpj').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i5nvmz').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewDeliverables' ;}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
