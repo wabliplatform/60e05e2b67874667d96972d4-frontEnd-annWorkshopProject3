@@ -40,17 +40,7 @@ $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );document.addEventListener('alignpWorkpackage', function(e) {
-  const advanceSelect = document.getElementById('i53io');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});const arrayib5cm3 = [];
+    );const arrayib5cm3 = [];
 document.getElementById("iyjqci").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("im1p3y")
