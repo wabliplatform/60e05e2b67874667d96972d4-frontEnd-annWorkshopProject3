@@ -4,7 +4,9 @@ let apiEmployeeApi = new TempApi.EmployeeApi();import TempApi from '../src/index
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ipfpt8').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.addEventListener('aligneImage', function(e) {
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ii78v2').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};document.addEventListener('aligneImage', function(e) {
   const advanceSelect = document.getElementById('is9hyz');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;

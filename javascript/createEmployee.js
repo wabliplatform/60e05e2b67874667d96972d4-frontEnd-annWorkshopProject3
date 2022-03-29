@@ -14,7 +14,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('izpik').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('icz5f').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};
  const uploadImage = async (event) => {
         const file = event.target.files[0];
         const base64 = await convertBase64(file);

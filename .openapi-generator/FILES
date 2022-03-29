@@ -3,6 +3,9 @@
 .travis.yml
 README.md
 config.js
+docs/Deliverable.md
+docs/DeliverableApi.json
+docs/DeliverableApi.md
 docs/Employee.md
 docs/EmployeeApi.json
 docs/EmployeeApi.md
@@ -22,11 +25,13 @@ index.js
 mocha.opts
 package.json
 src/ApiClient.js
+src/api/DeliverableApi.js
 src/api/EmployeeApi.js
 src/api/ProjectApi.js
 src/api/TaskApi.js
 src/api/WorkpackageApi.js
 src/index.js
+src/model/Deliverable.js
 src/model/Employee.js
 src/model/Project.js
 src/model/ProjectPImage.js

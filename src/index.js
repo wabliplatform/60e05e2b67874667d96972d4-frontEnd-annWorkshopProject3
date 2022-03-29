@@ -13,11 +13,13 @@
 
 
 import ApiClient from './ApiClient';
+import Deliverable from './model/Deliverable';
 import Employee from './model/Employee';
 import Project from './model/Project';
 import ProjectPImage from './model/ProjectPImage';
 import Task from './model/Task';
 import Workpackage from './model/Workpackage';
+import DeliverableApi from './api/DeliverableApi';
 import EmployeeApi from './api/EmployeeApi';
 import ProjectApi from './api/ProjectApi';
 import TaskApi from './api/TaskApi';
@@ -63,6 +65,12 @@ export {
     ApiClient,
 
     /**
+     * The Deliverable model constructor.
+     * @property {module:model/Deliverable}
+     */
+    Deliverable,
+
+    /**
      * The Employee model constructor.
      * @property {module:model/Employee}
      */
@@ -91,6 +99,12 @@ export {
      * @property {module:model/Workpackage}
      */
     Workpackage,
+
+    /**
+    * The DeliverableApi service constructor.
+    * @property {module:api/DeliverableApi}
+    */
+    DeliverableApi,
 
     /**
     * The EmployeeApi service constructor.
@@ -125,6 +139,12 @@ export default {
     ApiClient,
 
     /**
+     * The Deliverable model constructor.
+     * @property {module:model/Deliverable}
+     */
+    Deliverable,
+
+    /**
      * The Employee model constructor.
      * @property {module:model/Employee}
      */
@@ -153,6 +173,12 @@ export default {
      * @property {module:model/Workpackage}
      */
     Workpackage,
+
+    /**
+    * The DeliverableApi service constructor.
+    * @property {module:api/DeliverableApi}
+    */
+    DeliverableApi,
 
     /**
     * The EmployeeApi service constructor.

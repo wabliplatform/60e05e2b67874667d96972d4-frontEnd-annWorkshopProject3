@@ -15,6 +15,9 @@ module.exports = {
 	'createEmployee' : './javascript/createEmployee.js',
 	'viewEmployees' : './javascript/viewEmployees.js',
 	'viewWorkpackages' : './javascript/viewWorkpackages.js',
+	'createDeliverable' : './javascript/createDeliverable.js',
+	'updateDeliverable' : './javascript/updateDeliverable.js',
+	'viewDeliverables' : './javascript/viewDeliverables.js',
 },
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -14,7 +14,9 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('iiv8u').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};$(
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ik4gi').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};$(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }

@@ -12,7 +12,9 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('isu5yw').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ilhnff').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};
  const uploadImage = async (event) => {
         const file = event.target.files[0];
         const base64 = await convertBase64(file);

@@ -46,6 +46,12 @@ class ExpressServer {
 			this.app.get('/viewEmployees/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewEmployees.html')));
 			this.app.get('/viewWorkpackages', (req, res) => res.sendFile(path.join(__dirname,'html','viewWorkpackages.html')));
 			this.app.get('/viewWorkpackages/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewWorkpackages.html')));
+			this.app.get('/createDeliverable', (req, res) => res.sendFile(path.join(__dirname,'html','createDeliverable.html')));
+			this.app.get('/createDeliverable/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createDeliverable.html')));
+			this.app.get('/updateDeliverable', (req, res) => res.sendFile(path.join(__dirname,'html','updateDeliverable.html')));
+			this.app.get('/updateDeliverable/:id', (req, res) => res.sendFile(path.join(__dirname,'html','updateDeliverable.html')));
+			this.app.get('/viewDeliverables', (req, res) => res.sendFile(path.join(__dirname,'html','viewDeliverables.html')));
+			this.app.get('/viewDeliverables/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewDeliverables.html')));
 			
     }
   

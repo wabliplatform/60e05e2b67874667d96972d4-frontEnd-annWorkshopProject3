@@ -14,7 +14,9 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('iwq7u').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ihz33').onclick = (event) => {
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ihfax').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};document.getElementById('ihz33').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);

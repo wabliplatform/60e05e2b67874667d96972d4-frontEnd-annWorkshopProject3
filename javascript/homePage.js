@@ -12,7 +12,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('ip0cml').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};const onClickPaginationButton = (chunk, pagination) => {
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ihutxq').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
       if (
         pagination.children[i].classList.value.includes("active") === true

@@ -14,7 +14,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('i4cnb1').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i6xxi').onclick = (event) => {
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i2hzsw').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};document.getElementById('i6xxi').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);

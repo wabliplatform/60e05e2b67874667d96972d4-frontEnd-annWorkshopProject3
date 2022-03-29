@@ -4,7 +4,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     event.preventDefault();
     {  location.href= '/createEmployee' ;}};document.getElementById('ilshwy').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i1disx').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};
  const uploadImage = async (event) => {
         const file = event.target.files[0];
         const base64 = await convertBase64(file);

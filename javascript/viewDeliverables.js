@@ -1,4 +1,4 @@
-let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';document.getElementById('i3hm').onclick = (event) => {
+let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src/index';document.getElementById('i3hm').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('iuegv').onclick = (event) => {
     event.preventDefault();
@@ -12,9 +12,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
     event.preventDefault();
     {  location.href= '/viewTasks' ;}};document.getElementById('ilqkve').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('irdjc9').onclick = (event) => {
-    event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ikbhek').onclick = (event) => {
+    {  location.href= '/viewEmployees' ;}};document.getElementById('i5nvmz').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewDeliverables' ;}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
@@ -28,7 +26,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
     let numberOfFrontButtons =  findTypeOfPagination(pagination);
     pagination.children[chunk+numberOfFrontButtons-1].classList.add("active");
 
-  apiTaskApi.getAlltask((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
+  apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();[...subDataElements].forEach((element, index) => {
@@ -44,43 +42,33 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
 
         if(data.length - chunk*subDataElements.length <= revertIndex && revertIndex < data.length - (chunk-1)*subDataElements.length){
             try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tName']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dName']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tName;
+        insideSubDataElement.textContent = data[data.length -i -1].dName;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tName'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tName;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dName'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dName;
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tEnd']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dDate']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tEnd;
+        insideSubDataElement.textContent = data[data.length -i -1].dDate;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tEnd'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tEnd;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dDate'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dDate;
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tDescription']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dStatus']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tDescription;
+        insideSubDataElement.textContent = data[data.length -i -1].dStatus;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tDescription'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tDescription;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tPMs']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tPMs;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tPMs'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tPMs;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dStatus'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dStatus;
         
       }
      } catch (e) { console.log(e) };
@@ -136,7 +124,7 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         }
       }
     }
-  document.getElementById('i0er7b').onclick = (event) => {
+  document.getElementById('i2ni3').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -147,17 +135,17 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i0er7b")) === true &&
+            .contains(document.getElementById("i2ni3")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewTask/' + transitionId;}};document.getElementById('igekz').onclick = (event) => {
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('iyge54').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/viewTasks/','');
-      if(taskId === '/viewTasks' || taskId === ''){
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -165,15 +153,15 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           if (
             document
               .getElementById(key)
-              .contains(document.getElementById("igekz")) === true &&
+              .contains(document.getElementById("iyge54")) === true &&
               document.getElementById(key).contains(document.getElementById(parentId)) === false
           ) {
-            taskId = value._id;
+            deliverableId = value._id;
             parentId = key;
           }
         });
       }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('iv0pcc').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i3hcbp').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -184,17 +172,17 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("iv0pcc")) === true &&
+            .contains(document.getElementById("i3hcbp")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewTask/' + transitionId;}};document.getElementById('iez4f5').onclick = (event) => {
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('ilfamo').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/viewTasks/','');
-      if(taskId === '/viewTasks' || taskId === ''){
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -202,15 +190,15 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           if (
             document
               .getElementById(key)
-              .contains(document.getElementById("iez4f5")) === true &&
+              .contains(document.getElementById("ilfamo")) === true &&
               document.getElementById(key).contains(document.getElementById(parentId)) === false
           ) {
-            taskId = value._id;
+            deliverableId = value._id;
             parentId = key;
           }
         });
       }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('ifn3df').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('ibhjqt').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -221,17 +209,17 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("ifn3df")) === true &&
+            .contains(document.getElementById("ibhjqt")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewTask/' + transitionId;}};document.getElementById('ia3n6k').onclick = (event) => {
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('iz43oj').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/viewTasks/','');
-      if(taskId === '/viewTasks' || taskId === ''){
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -239,15 +227,15 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           if (
             document
               .getElementById(key)
-              .contains(document.getElementById("ia3n6k")) === true &&
+              .contains(document.getElementById("iz43oj")) === true &&
               document.getElementById(key).contains(document.getElementById(parentId)) === false
           ) {
-            taskId = value._id;
+            deliverableId = value._id;
             parentId = key;
           }
         });
       }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('i38rcg').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('iu0uyl').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -258,17 +246,17 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i38rcg")) === true &&
+            .contains(document.getElementById("iu0uyl")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewTask/' + transitionId;}};document.getElementById('iv5pek').onclick = (event) => {
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('iruxm5').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/viewTasks/','');
-      if(taskId === '/viewTasks' || taskId === ''){
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -276,15 +264,15 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           if (
             document
               .getElementById(key)
-              .contains(document.getElementById("iv5pek")) === true &&
+              .contains(document.getElementById("iruxm5")) === true &&
               document.getElementById(key).contains(document.getElementById(parentId)) === false
           ) {
-            taskId = value._id;
+            deliverableId = value._id;
             parentId = key;
           }
         });
       }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};document.getElementById('i7g1v').onclick = (event) => {
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('ibdan').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -295,17 +283,17 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i7g1v")) === true &&
+            .contains(document.getElementById("ibdan")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewTask/' + transitionId;}};document.getElementById('i7mprs').onclick = (event) => {
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('i1eh0p').onclick = (event) => {
     event.preventDefault();
-    let taskId = window.location.pathname.replace('/viewTasks/','');
-      if(taskId === '/viewTasks' || taskId === ''){
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
         let parentId = "";
         const storedData = window.localStorage.getItem('data');
         const newMap = new Map(JSON.parse(storedData));
@@ -313,58 +301,48 @@ let apiTaskApi = new TempApi.TaskApi();import TempApi from '../src/index';docume
           if (
             document
               .getElementById(key)
-              .contains(document.getElementById("i7mprs")) === true &&
+              .contains(document.getElementById("i1eh0p")) === true &&
               document.getElementById(key).contains(document.getElementById(parentId)) === false
           ) {
-            taskId = value._id;
+            deliverableId = value._id;
             parentId = key;
           }
         });
       }
-    apiTaskApi.deletetask( taskId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/homePage' ;}}});};window.onload = () => {apiTaskApi.getAlltask((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};window.onload = () => {apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();let chunk = 1;  data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
         try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tName']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dName']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tName;
+        insideSubDataElement.textContent = data[data.length -i -1].dName;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tName'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tName;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dName'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dName;
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tEnd']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dDate']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tEnd;
+        insideSubDataElement.textContent = data[data.length -i -1].dDate;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tEnd'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tEnd;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dDate'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dDate;
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tDescription']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'dStatus']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tDescription;
+        insideSubDataElement.textContent = data[data.length -i -1].dStatus;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tDescription'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tDescription;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'tPMs']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].tPMs;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'tPMs'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].tPMs;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'dStatus'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].dStatus;
         
       }
      } catch (e) { console.log(e) };

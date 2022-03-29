@@ -12,6 +12,8 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('i00ye').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('i1wf6').onclick = (event) => {
+    {  location.href= '/viewWorkpackages' ;}};document.getElementById('ivpfs').onclick = (event) => {
+    event.preventDefault();
+    {  location.href= '/viewDeliverables' ;}};document.getElementById('i1wf6').onclick = (event) => {
     event.preventDefault();
     workpackage['wName'] = document.querySelector("[annotationname = 'wName']").value;workpackage['wPMs'] = document.querySelector("[annotationname = 'wPMs']").value;workpackage['wRole'] = document.querySelector("[annotationname = 'wRole']").value;apiWorkpackageApi.createworkpackage( workpackage, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {};
