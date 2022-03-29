@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pDeliverable (base name: "pDeliverable")', function() {
+      // uncomment below and update the code to test the property pDeliverable
+      //var instance = new TempApi.Project();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

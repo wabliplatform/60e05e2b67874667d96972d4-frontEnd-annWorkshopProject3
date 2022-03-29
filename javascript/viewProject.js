@@ -127,7 +127,97 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};window.onload = () => {let projectId = window.location.pathname.replace('/viewProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').textContent = response.body.query.pTitle; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pWebsite]').textContent = response.body.query.pWebsite; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pGA]').textContent = response.body.query.pGA; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pStart]').textContent = response.body.query.pStart; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pEnd]').textContent = response.body.query.pEnd; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDuration]').textContent = response.body.query.pDuration; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pAbstract]').textContent = response.body.query.pAbstract; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDescription]').textContent = response.body.query.pDescription; } catch (e) { console.log(e) };try { 
+     location.href= '/updateWorkpackage/' + transitionId;}};document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('i7xfy4');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('i23ab4');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('iww56h');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('iq6svs');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('i39d64');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('i2633y');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('i38pio');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('icfzk3');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('iro0ds');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});window.onload = () => {let projectId = window.location.pathname.replace('/viewProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').textContent = response.body.query.pTitle; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pWebsite]').textContent = response.body.query.pWebsite; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pGA]').textContent = response.body.query.pGA; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pStart]').textContent = response.body.query.pStart; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pEnd]').textContent = response.body.query.pEnd; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDuration]').textContent = response.body.query.pDuration; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pAbstract]').textContent = response.body.query.pAbstract; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDescription]').textContent = response.body.query.pDescription; } catch (e) { console.log(e) };try { 
       if(response.body.query.pImage !== undefined){
         if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
           document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
@@ -203,6 +293,68 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
             "[annotationname = 'pWorkpackage']"
           ).getAttribute("id"),
           response.body.query.pWorkpackage
+        );
+      }
+     } catch (e) { console.log(e) };try { 
+        document.querySelector('[annotationname = pDeliverable]').setAttribute('selected-element',response.body.query.pDeliverable.undefined);document.dispatchEvent(new Event("alignpDeliverable"));
+        const insideSubdocument = document.querySelector("[annotationname = 'pDeliverable']");
+        if (insideSubdocument !==null) {
+          const tableData = response.body.query.pDeliverable;
+    const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
+    tableData.forEach((data,index) => {
+      if(tableDataElement.length < index) {
+        return;
+      }
+       try {
+      const attributeSubdocumentElement = tableDataElement[
+        index
+      ].querySelector("[annotationname = 'dName']");
+      if (attributeSubdocumentElement !== null) {
+        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].dName;
+      }
+    }
+    catch(e) {console.log(e);}; try {
+      const attributeSubdocumentElement = tableDataElement[
+        index
+      ].querySelector("[annotationname = 'dDate']");
+      if (attributeSubdocumentElement !== null) {
+        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].dDate;
+      }
+    }
+    catch(e) {console.log(e);}; try {
+      const attributeSubdocumentElement = tableDataElement[
+        index
+      ].querySelector("[annotationname = 'dStatus']");
+      if (attributeSubdocumentElement !== null) {
+        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].dStatus;
+      }
+    }
+    catch(e) {console.log(e);};
+      
+      map.set(
+        tableDataElement[index].getAttribute("id"),
+        tableData[tableData.length - index -1]
+      );
+    
+    });
+    
+      [...tableDataElement].forEach((element, index) => {
+        if (index >= tableData.length) {
+          tableDataElement[index].style.display = "none";
+        }
+        else {
+          tableDataElement[index].style.display = "";
+        }
+      });
+    
+    
+        }
+      if(response.body.query.pDeliverable._id){
+        map.set(
+          document.querySelector(
+            "[annotationname = 'pDeliverable']"
+          ).getAttribute("id"),
+          response.body.query.pDeliverable
         );
       }
      } catch (e) { console.log(e) };window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));}});};

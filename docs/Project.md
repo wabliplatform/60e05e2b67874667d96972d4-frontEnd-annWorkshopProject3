@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **pAbstract** | **String** |  | 
 **pDescription** | **String** |  | 
 **pWorkpackage** | [**[Workpackage]**](Workpackage.md) |  | 
+**pDeliverable** | [**[Deliverable]**](Deliverable.md) |  | 
 
 

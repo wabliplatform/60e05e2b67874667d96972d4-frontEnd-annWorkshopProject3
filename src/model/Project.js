@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Deliverable from './Deliverable';
 import ProjectPImage from './ProjectPImage';
 import Workpackage from './Workpackage';
 
@@ -34,10 +35,11 @@ class Project {
      * @param pAbstract {String} 
      * @param pDescription {String} 
      * @param pWorkpackage {Array.<module:model/Workpackage>} 
+     * @param pDeliverable {Array.<module:model/Deliverable>} 
      */
-    constructor(pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage) { 
+    constructor(pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage, pDeliverable) { 
         
-        Project.initialize(this, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage);
+        Project.initialize(this, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage, pDeliverable);
     }
 
     /**
@@ -45,7 +47,7 @@ class Project {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage) { 
+    static initialize(obj, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pDescription, pWorkpackage, pDeliverable) { 
         obj['pImage'] = pImage;
         obj['pTitle'] = pTitle;
         obj['pStart'] = pStart;
@@ -56,6 +58,7 @@ class Project {
         obj['pAbstract'] = pAbstract;
         obj['pDescription'] = pDescription;
         obj['pWorkpackage'] = pWorkpackage;
+        obj['pDeliverable'] = pDeliverable;
     }
 
     /**
@@ -101,6 +104,9 @@ class Project {
             }
             if (data.hasOwnProperty('pWorkpackage')) {
                 obj['pWorkpackage'] = ApiClient.convertToType(data['pWorkpackage'], [Workpackage]);
+            }
+            if (data.hasOwnProperty('pDeliverable')) {
+                obj['pDeliverable'] = ApiClient.convertToType(data['pDeliverable'], [Deliverable]);
             }
         }
         return obj;
@@ -163,6 +169,11 @@ Project.prototype['pDescription'] = undefined;
  * @member {Array.<module:model/Workpackage>} pWorkpackage
  */
 Project.prototype['pWorkpackage'] = undefined;
+
+/**
+ * @member {Array.<module:model/Deliverable>} pDeliverable
+ */
+Project.prototype['pDeliverable'] = undefined;
 
 
 

@@ -1,4 +1,4 @@
-let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
+let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';let apiDeliverableApi = new TempApi.DeliverableApi();let apiProjectApi = new TempApi.ProjectApi();let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('ix1q7').onclick = (event) => {
     event.preventDefault();
@@ -70,13 +70,49 @@ document.getElementById("iyjqci").onclick = event => {
         optionElement.setAttribute("selected", true);
     }
   );
+});document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('iwpwdd');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});const arrayio47ds = [];
+document.getElementById("iehmy6").onclick = event => {
+  event.preventDefault();
+  const select = document.getElementById("ioi4x2")
+  arrayio47ds.push({
+      value: select.value,
+      liValue: select.selectedOptions[0].textContent
+  });
+  select.value = "";
+  select.selectedIndex = 0;
+    let e=``;
+   for (let y=0; y<arrayio47ds.length; y++)
+   {
+     e += `<li arrayvalue='${arrayio47ds[y].value}'>${arrayio47ds[y].liValue}</li>`;
+   }
+   document.getElementById("izpu4r").innerHTML = e;
+};document.addEventListener('alignpDeliverable', function(e) {
+  const advanceSelect = document.getElementById('ioi4x2');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
 });document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
     project['pImage'] = {
         data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
         name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
       };
-      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if2wp").querySelectorAll( "[dataitem='true']" )].filter(
+      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pDescription'] = document.querySelector("[annotationname = 'pDescription']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project["pDeliverable"] = [...document.querySelector("[annotationname = 'pDeliverable']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage/'+response.body.query._id+'' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if2wp").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
@@ -97,6 +133,31 @@ document.getElementById("iyjqci").onclick = event => {
         
       }
       document.dispatchEvent(new Event("alignpWorkpackage"))
+    });
+
+    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
+    
+    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i0eu5q").querySelectorAll( "[dataitem='true']" )].filter(
+    (element, index, array) =>
+    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
+  );const map = new Map();  data.forEach((item,i) => {
+    if(subDataElements.length > i)
+      {
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'dName']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].dName;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'dName'){
+        subDataElements[i].textContent = data[data.length -i -1].dName;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
+        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
+        
+      }
+      document.dispatchEvent(new Event("alignpDeliverable"))
     });
 
     window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
